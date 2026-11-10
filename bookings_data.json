@@ -1,0 +1,62 @@
+[
+  {
+    "id": "BK-1794293619",
+    "referenceCode": "BR-F8C3",
+    "queueNumber": "A01",
+    "serviceId": "checkup",
+    "serviceName": "ตรวจฟันและให้คำปรึกษา",
+    "date": "2026-11-11",
+    "timeSlot": "08:30 - 09:30 น.",
+    "patientName": "ทดสอบ สตรีมลิต",
+    "phone": "0812345678",
+    "idCardLast4": "1234",
+    "symptomNote": "",
+    "status": "pending",
+    "createdAt": "2026-11-10T13:53:39.397939"
+  },
+  {
+    "id": "BK-SAMPLE-001",
+    "referenceCode": "BR-1001",
+    "queueNumber": "A01",
+    "serviceId": "checkup",
+    "serviceName": "ตรวจฟันและให้คำปรึกษา",
+    "date": "2026-11-10",
+    "timeSlot": "08:30 - 09:30 น.",
+    "patientName": "สมชาย บุรีรัมย์ดี",
+    "phone": "0812345678",
+    "idCardLast4": "1234",
+    "symptomNote": "ต้องการตรวจสุขภาพฟันประจำปี",
+    "status": "confirmed",
+    "createdAt": "2026-11-10T13:53:39.388016"
+  },
+  {
+    "id": "BK-SAMPLE-002",
+    "referenceCode": "BR-1002",
+    "queueNumber": "B01",
+    "serviceId": "scaling",
+    "serviceName": "ขูดหินปูน",
+    "date": "2026-11-10",
+    "timeSlot": "09:30 - 10:30 น.",
+    "patientName": "สมหญิง ศรีนคร",
+    "phone": "0898765432",
+    "idCardLast4": "5678",
+    "symptomNote": "มีหินปูนสะสมบริเวณฟันหน้าล่าง",
+    "status": "pending",
+    "createdAt": "2026-11-10T13:53:39.388016"
+  },
+  {
+    "id": "BK-SAMPLE-003",
+    "referenceCode": "BR-1003",
+    "queueNumber": "C01",
+    "serviceId": "filling",
+    "serviceName": "อุดฟัน",
+    "date": "2026-11-11",
+    "timeSlot": "08:30 - 09:30 น.",
+    "patientName": "วิชัย มั่งมี",
+    "phone": "0861112233",
+    "idCardLast4": "9988",
+    "symptomNote": "เสียวฟันเวลารับประทานน้ำเย็น",
+    "status": "confirmed",
+    "createdAt": "2026-11-10T13:53:39.388016"
+  }
+]

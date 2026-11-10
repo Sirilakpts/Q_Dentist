@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Q_Dentist - ระบบจองคิวทันตกรรม เทศบาลนครบุรีรัมย์ 🦷🏛️
 
-## Getting Started
+ระบบจองคิวทันตกรรมออนไลน์สำหรับเทศบาลนครบุรีรัมย์ พัฒนาด้วย **Streamlit** (Python) และ **Next.js**
+ออกแบบตามอัตลักษณ์ Modern Government Minimal (โทนสีกรมท่า `#063466`, มินต์อ่อน `#E9F4F1`, ทอง `#D5A423`, ขาว `#FFFFFF`)
 
-First, run the development server:
+---
 
+## 🌟 ฟีเจอร์หลัก (Key Features)
+
+1. **หน้าแรก (Home)**
+   - Hero Section ประชาสัมพันธ์พร้อมปุ่มทางลัดจองคิวและตรวจสอบสถานะ
+   - แสดงขั้นตอนการจองคิวง่ายๆ 4 ขั้นตอนด้วย Badge วงกลมมาตรฐาน
+   - การ์ดบริการทันตกรรม 4 ประเภท (ตรวจฟัน, ขูดหินปูน, อุดฟัน, ถอนฟัน) พร้อมปุ่มเลือกบริการทันที
+   - ข้อมูลการติดต่อ เวลาทำการ (จันทร์-ศุกร์ 08:30 - 16:30 น.) และสถานที่ตั้ง
+
+2. **จองคิวทันตกรรม (Booking Wizard)**
+   - เลือกบริการทันตกรรมพร้อมแสดงข้อแนะนำและคำแนะนำการเตรียมตัว
+   - ปฏิทินเลือกวันทำการล่วงหน้า 14 วัน (คัดกรองเฉพาะวันจันทร์-ศุกร์)
+   - เลือกรอบเวลาตรวจรักษา พร้อมคำนวณจำนวนคิวคงเหลืออัตโนมัติ
+   - ฟอร์มข้อมูลผู้รับบริการ (ชื่อ-นามสกุล, เบอร์โทรศัพท์, เลขท้าย 4 หลักบัตรประชาชน, อาการเบื้องต้น)
+   - ออกใบนัดหมายรับบริการทันตกรรม (Appointment Slip) พร้อมรหัสอ้างอิง `BR-XXXX` และรหัสคิว เช่น `A01`, `B01`
+
+3. **ตรวจสอบสถานะคิว (Queue Tracking & Cancellation)**
+   - ค้นหาด้วยรหัสอ้างอิง และยืนยันตัวตนด้วยเบอร์โทรศัพท์หรือเลขท้ายบัตร ปชช. 4 หลัก
+   - แสดงสถานะแบบเรียลไทม์ (รอเจ้าหน้าที่ยืนยัน, ยืนยันแล้ว, เช็คอินแล้ว, เสร็จสิ้น, ยกเลิก)
+   - รองรับการขอยกเลิกนัดหมายพร้อมระบุเหตุผล คืนสิทธิ์คิวสู่ระบบทันที
+
+4. **แผงควบคุมเจ้าหน้าที่ (Staff Management Portal)**
+   - สรุปสถิติคิวภาพรวม (คิวทั้งหมด, รอยืนยัน, ยืนยันแล้ว, เสร็จสิ้น)
+   - ค้นหาและกรองรายการตามสถานะ, บริการ หรือคำค้นหา
+   - อัปเดตสถานะคิวแบบทันที (Pending $\rightarrow$ Confirmed $\rightarrow$ Checked-in $\rightarrow$ Completed $\rightarrow$ Cancelled)
+
+---
+
+## 🚀 วิธีการรันระบบด้วย Streamlit
+
+### 1. ติดตั้ง Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pip install -r requirements.txt
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. รันแอปพลิเคชัน
+```bash
+streamlit run app.py
+```
+เปิดเบราว์เซอร์ที่ [http://localhost:8501](http://localhost:8501)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 การ Deploy บน Streamlit Community Cloud (ฟรี)
 
-## Learn More
+1. เข้าสู่ระบบที่ [https://share.streamlit.io](https://share.streamlit.io/) ด้วยบัญชี GitHub
+2. กดปุ่ม **"Create app"** / **"New app"**
+3. เลือก Repository: `Sirilakpts/Q_Dentist`
+4. ตั้งค่า Branch: `main`
+5. ตั้งค่า Main file path: `app.py`
+6. กดปุ่ม **"Deploy!"** ระบบจะทำการติดตั้งและสร้าง Public URL ให้สามารถเข้าใช้งานและแชร์ลิงก์ได้ทันที
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 โครงสร้างไฟล์สำคัญ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app.py` : ไฟล์หลักของ Streamlit Application ครอบคลุม UI, Responsive Layout และ Form Interaction
+- `data_manager.py` : โมดูลจัดการข้อมูล บริการทันตกรรม, คำนวณรอบเวลา, รหัสคิว และระบบบันทึก Mock Data
+- `requirements.txt` : รายการแพ็กเกจ Python สำหรับ Streamlit Cloud (`streamlit`, `pandas`)
+- `.streamlit/config.toml` : การตั้งค่าธีมสีราชการ (Navy `#063466`, Soft Mint `#E9F4F1`)
+- `bookings_data.json` : ฐานข้อมูลจำลองสำหรับเก็บประวัติการจอง
